@@ -47,9 +47,14 @@ class Test_this:
 
     def testvg(self):
         try: 
-            self.manager.update_interface_state("uup_and_down")
-        except ValueError as e:
-            print(e)
+            self.manager.update_interface_state("upk")
+        except ValueError:
+            assert True
+        else:
+             assert False
+
+
+            
         
 
 

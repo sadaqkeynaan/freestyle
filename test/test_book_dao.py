@@ -19,6 +19,7 @@ class Test_Book:
         
     # def teardown_method(self):
     #     self.book_dao.close()
+    
     @pytest.fixture(autouse=True)
     def setup_teardown(self):
         self.book_dao = BookDAO(":memory:")
@@ -30,6 +31,7 @@ class Test_Book:
         self.book_dao.insert_book(self.book3)
         yield
         self.book_dao.close()
+        
         
         
     def test_allbook(self):
